@@ -8,7 +8,7 @@ def read(f, age):
 
 def process(age):
     age.sort()
-    print(age, '#4')
+    print(age, '#5')
     return(age)
 
 #def write(age):
@@ -22,8 +22,10 @@ def main():
     file_handler = open('agelist.txt', 'r')
     age_list = read(file_handler, age_list)
     print(age_list, '#3')
+    age_list = map(int, age_list)
+    print(age_list, '#4')
     age_list = process(age_list)
-    print(age_list, '#5')
+    print(age_list, '#6')
 #    write(age_list)
     return
 
