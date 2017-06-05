@@ -1,32 +1,34 @@
 #!/usr/bin/env python2
 #2017-06-04
 #Reading a text file into an array, processing it, then writing to a file
+import math
+
 def read(f, age):
     age = f.readlines()
-    print(age, '#2')
     return(age)
 
 def process(age):
     age.sort()
-    print(age, '#5')
     return(age)
 
-#def write(age):
-#    for element in age:
-#    print(element) 
-#    return
+def write(age, maxx, mini):
+    for element in age:
+        print(element)
+    print("The largest element is: ", maxx)
+    print("The smallest element is: ", mini) 
+    return
 
 def main():
     age_list = []
-    print(age_list, '#1')
     file_handler = open('agelist.txt', 'r')
+    maximum = 0
+    minimum = 0
     age_list = read(file_handler, age_list)
-    print(age_list, '#3')
     age_list = map(int, age_list)
-    print(age_list, '#4')
     age_list = process(age_list)
-    print(age_list, '#6')
-#    write(age_list)
+    maximum = max(age_list)
+    minimum = min(age_list)
+    write(age_list, maximum, minimum)
     return
 
 if __name__ == "__main__":
